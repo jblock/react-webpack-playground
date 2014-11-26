@@ -1,3 +1,5 @@
+require('zurb-foundation-5/scss/foundation.scss')
+
 var React = require('react');
 var router = require('router');
 

@@ -8,7 +8,7 @@ var OtherTestRoute = React.createClass({
   render: function() {
     return (
       <div>
-        <h3>Something else</h3>
+        <h3>Single Nest</h3>
         <RouteHandler />
       </div>
     );

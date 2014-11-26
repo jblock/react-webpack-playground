@@ -9,12 +9,8 @@ OtherTestRoute = require('components/OtherTestRoute/OtherTestRoute')
 
 routes = (
   <Route handler={App} path="/">
-    <Route
-      name="test"
-      handler={OtherTestRoute}>
-      <Route
-        name="thing"
-        handler={TestRoute} />
+    <Route name="single-nest" handler={OtherTestRoute}>
+      <Route name="double-nest" handler={TestRoute} />
     </Route>
   </Route>
 )

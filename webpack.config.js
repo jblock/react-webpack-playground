@@ -44,7 +44,16 @@ module.exports = {
     loaders: [
       { test: /\.jsx$/, loader: 'jsx-loader' },
       { test: /\.cjsx$/, loader: 'coffee-loader!cjsx-loader' },
-      { test: /\.css$/, loader: 'style-loader!rework-webpack-loader' }
+      { test: /\.css$/, loader: 'style-loader!rework-webpack-loader' },
+      {
+        test: /\.scss$/,
+        // Query parameters are passed to node-sass
+        loader: "style!css!sass?outputStyle=expanded&" +
+          "includePaths[]=" +
+            (path.resolve(__dirname, "./bower_components")) + "&" +
+          "includePaths[]=" +
+            (path.resolve(__dirname, "./node_modules"))
+      }
     ],
     noParse: /\.min\.js/
   },

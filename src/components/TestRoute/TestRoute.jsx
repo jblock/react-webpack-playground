@@ -4,7 +4,14 @@ var TestRoute = React.createClass({
 
   render: function() {
     return (
-      <h1>Test Route</h1>
+      <div>
+        <h5>Double Nest</h5>
+        <form>
+          <label>Something
+            <input type="text" />
+          </label>
+        </form>
+      </div>
     );
   }
 

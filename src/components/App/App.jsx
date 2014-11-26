@@ -11,9 +11,15 @@ var App = React.createClass({
   render: function() {
     return (
       <main>
-        <h1>Main Page</h1>
-        <div><Link to="thing">first thing</Link></div>
-        <div><Link to="test">Something</Link></div>
+        <nav className="top-bar" data-topbar role="navigation">
+          <ul className="title-area">
+            <li className="name">
+              <h1><Link to="double-nest">Link</Link></h1>
+            </li>
+          </ul>
+        </nav>
+        <div><Link to="single-nest">Single Nesting</Link></div>
+        <div><Link to="double-nest">Double Nesting</Link></div>
         <RouteHandler />
       </main>
     )
