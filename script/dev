@@ -1,11 +1,11 @@
 #!/bin/sh
-# ./node_modules/.bin/webpack-dev-server \
-#   --devtool inline-source-map \
-#   --inline \
-#   --colors \
-#   --progress \
-#   --display-error-details \
-#   --display-reasons &
+./node_modules/.bin/webpack-dev-server \
+  --inline \
+  --devtool source-map \
+  --colors \
+  --progress \
+  --display-error-details \
+  --display-reasons &
 npm start
 kill %1
 kill %2

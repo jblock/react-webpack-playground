@@ -9,7 +9,7 @@ var webpack = require('webpack');
 var varMap = reworkLoader.makeVarMap('src/theme/theme.css');
 
 module.exports = {
-  entry: '../index.js',
+  entry: '../index.jsx',
   target: 'web',
   context: path.join(__dirname, 'src'),
   debug: 'source-map',
@@ -31,7 +31,7 @@ module.exports = {
       'main'
     ],
     moduleDirectories: ['node_modules'],
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.cjsx', '.jsx'],
     root: [
       path.join(__dirname, 'src'),
       path.join(__dirname, 'node_modules')
@@ -43,6 +43,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx$/, loader: 'jsx-loader' },
+      { test: /\.cjsx$/, loader: 'coffee-loader!cjsx-loader' },
       { test: /\.css$/, loader: 'style-loader!rework-webpack-loader' }
     ],
     noParse: /\.min\.js/
