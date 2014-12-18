@@ -9,12 +9,12 @@
   "author": "Jason Block",
   "license": "None",
   "dependencies": {
+    "es6-promise": "^2.0.1",
     "mcfly": "0.0.8",
     "promise": "^6.0.1",
     "react": "^0.12.1",
     "react-pokemon": "^0.1.0",
     "react-router": "^0.11.2",
-    "superagent-promise": "^0.2.0",
     "zurb-foundation-5": "~5.4.7"
   },
   "devDependencies": {
