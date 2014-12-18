@@ -4,21 +4,16 @@ Router = require('react-router')
 {DefaultRoute, Route} = Router
 
 App = require('components/App/App')
-TestRoute = require('components/TestRoute/TestRoute')
-OtherTestRoute = require('components/OtherTestRoute/OtherTestRoute')
+Dashboard = require('components/Dashboard/Dashboard')
 
 routes = (
   <Route handler={App} path="/">
-    <Route name="single-nest" handler={OtherTestRoute}>
-      <Route name="double-nest" handler={TestRoute} />
-    </Route>
+    <DefaultRoute handler={Dashboard} name="home" />
   </Route>
 )
 
-
-router = Router.create({
-  routes: routes,
+router = Router.create
+  routes: routes
   location: Router.HistoryLocation
-})
 
 module.exports = router;
