@@ -10,6 +10,7 @@
   "license": "None",
   "dependencies": {
     "es6-promise": "^2.0.1",
+    "lodash": "^2.4.1",
     "mcfly": "0.0.8",
     "promise": "^6.0.1",
     "react": "^0.12.1",
