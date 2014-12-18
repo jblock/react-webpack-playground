@@ -3,7 +3,16 @@ React = require('react')
 Router = require('react-router')
 {RouteHandler, Link} = Router
 
-App = React.createClass
+require('helpers/API')
+
+# cx = require('react/addons').classSet
+# klassNames = cx
+#   'row': true
+#   'is-error': SomethingStore.isValid(this.props.data) # or checking by resource ID
+# component = <Something className={klassNames} />
+#
+# On production build, we can dedupe the webpack output to allow
+# 'react' and 'react/addons' to be used alongside one another
 
   render: ->
     return (
