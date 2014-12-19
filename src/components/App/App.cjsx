@@ -14,6 +14,8 @@ require('helpers/API')
 # On production build, we can dedupe the webpack output to allow
 # 'react' and 'react/addons' to be used alongside one another
 
+App = React.createClass
+
   render: ->
     return (
       <main>
