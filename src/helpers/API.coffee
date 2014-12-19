@@ -5,12 +5,20 @@ request = require('superagent')
 
 TIMEOUT = 10000
 
+getPromiseEnd = (previousEnd) ->
+  (success, failure) ->
+    promise = new Promise (resolve, reject) =>
+      previousEnd.call @, (error, res) ->
+        if error or not res.ok
+          reject error or res
+        else
+          resolve res
+    promise = promise.then(success, failure) if success or failure
+    promise
+
 promisePlugin = (request) ->
-  promise = new Promise (resolve, reject) ->
-    request.on 'response', resolve
-    request.on 'error', reject
-  request.then = (onFulfilled, onRejected) ->
-    promise.then onFulfilled, onRejected
+  request.end = getPromiseEnd(request.end)
+  request
 
 makeRequest = (type, url, data, query) ->
   request(type, url)
